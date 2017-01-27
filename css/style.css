@@ -1,0 +1,144 @@
+body {
+  font-family: arial;
+  margin:0;
+  box-sizing: border-box;
+}
+.container {
+  margin: 10px auto;
+  max-width : 700px;
+  background-color:#f2f2f2;
+  box-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+header {
+  padding: 30px;
+}
+
+h1 {
+  font-size:35px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size:25px;
+  margin: 5px 0;
+}
+
+.logo {
+  width: 150px;
+  float: right;
+}
+
+.logo img {
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+  padding:0;
+}
+header table {
+  border-spacing: 5px 13px;
+}
+
+header table th {
+  padding-bottom: 10px;
+  text-align: left;
+  font-style: italic;
+  color: #666;
+}
+header table tr td:first-child{
+  font-weight: bold;
+  border-left: 2px solid #777;
+  padding-left: 5px; 
+}
+
+nav ul li {
+  border-bottom: 1px white solid;
+  background-color:#CE2F31;
+}
+
+nav ul li a {
+  display: block;
+  padding:15px;
+  transition: background-color 0.2s;
+}
+
+nav ul li a:hover {
+  background-color:#254FA5;
+}
+
+nav ul li a {
+  color:white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+ol {
+  padding: 0 0 0 40px;
+  list-style-type: none;
+  counter-reset: list;
+}
+
+ol li {
+  padding: 20px;
+  position: relative;
+  border-bottom: 2px solid #CE2F31;
+}
+
+ol li:last-child {
+  border-bottom: none;
+}
+
+ol li:before {
+  counter-increment: list;
+  content: counter(list);
+  position: absolute;
+  float: left;
+  left: -20px;
+  top: 30px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #666;
+}
+
+ol li h3 {
+  display: inline-block;
+  margin: 0;
+}
+
+footer {
+  background-color:#CE2F31;
+  padding:20px;
+  margin:0;
+}
+
+footer a {
+  display: block; 
+  text-align: center;
+  height: 40px;
+  margin: auto;
+  position: relative;
+  transition: background-color 0.2s;
+  background-image: url('../img/arrow.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+footer a img {
+  height: 100%;
+  transform: rotate(180deg);
+  
+}
+
+footer a:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+@media (max-width: 480px) {
+  header .logo {
+    float: none;
+    margin: auto;
+  }
+}
