@@ -18,13 +18,14 @@ function MakeFixable(el) {
 	window.addEventListener('scroll', function() {
 		if(elPosition.y - 20 <= pageYOffset) {
       if(pageYOffset > lastYPos) {
-
-        el.style.top = (pageYOffset - elContainerPosition.y) + "px";
+        el.style.position = 'fixed';
+        // el.style.top = (pageYOffset - elContainerPosition.y) + "px";
       } else {
-        el.style.top = Math.max(0, pageYOffset - elContainerPosition.y) + "px";
+        // el.style.top = Math.max(0, pageYOffset - elContainerPosition.y) + "px";
       }
     } else {
       el.style.top = 0;
+      el.style.position = '';
     }
     lastYPos = pageYOffset;
 	});

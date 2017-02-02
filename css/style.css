@@ -64,6 +64,7 @@ main.main > section h2 {
 /* ====== NAV ====== */
 nav ul {
   list-style: none;
+  padding: 0;
 }
 nav li {
   padding: 5px;
@@ -83,14 +84,77 @@ nav a:hover {
   color: #CE2F31;
 }
 
+
+
+/* ===== TEAM MEMBERS' SECTION ====== */
+section.team-members {
+  border-bottom: 2px solid #CE2F31;
+  background-color: rgba(0,0,0,0.1);
+  /*height: 300px;*/
+
+}
+
+section.team-members .flex-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+section.team-members .flex-cards > * {
+  display: block;
+}
+
+section.team-members .card {
+  max-width: 230px;
+  width: 22%;
+  height: 250px;
+  overflow: hidden;
+  transition: margin 0.1s, width 0.3s;
+}
+section.team-members .card .front {
+  background-position: center center;
+  background-size: cover;
+}
+
+#meredith {background-image: url('../img/Meredith.gif');}
+#joel {background-image: url('../img/Joel.gif');}
+#belal {background-image: url('../img/Belal.gif');}
+#steven {background-image: url('../img/Steven.gif');}
+
+section.team-members .card .title {
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(255,255,255, .95);
+  transition: color 0.1s;
+}
+
+ .card:hover  .title {
+  color: #CE2F31;
+ }
+
+.card .title span {
+  display: block;
+  text-transform: uppercase;
+}
+.card .title .name {
+  font-weight: bold;
+}
+
+.card .title .role {
+  font-size: 12px;
+}
+
 /* ===== RULES SECTION ===== */
 section.rules {
+  overflow: auto;
 }
 .roles {
   list-style:disc;
   margin:10px;
 }
-section.rules ul {
+section.rules main ul {
   list-style: none;
   padding: 10px;
 }
@@ -117,62 +181,6 @@ section.rules .side-bar nav {
   top: 0;
 }
 
-/* ===== TEAM MEMBERS' SECTION ====== */
-section.team-members {
-  border-bottom: 2px solid #CE2F31;
-  background-color: rgba(0,0,0,0.1);
-  /*height: 300px;*/
-
-
-}
-
-section.team-members .flex-cards {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-section.team-members .flex-cards > * {
-  display: block;
-}
-
-section.team-members .card {
-  max-width: 230px;
-  width: 22%;
-  height: 250px;
-  overflow: hidden;
-  transition: margin 0.1s, width 0.3s;
-}
-
-section.team-members .card img {
-  height: 100%;
-}
-
-section.team-members .card .title {
-  position: absolute;
-  bottom: 0;
-  height: 50px;
-  text-align: center;
-  width: 100%;
-  background-color: rgba(255,255,255, .95);
-  transition: color 0.1s;
-}
-
- .card:hover  .title {
-  color: #CE2F31;
- }
-
-.card .title span {
-  display: block;
-  text-transform: uppercase;
-}
-.card .title .name {
-  font-weight: bold;
-}
-
-.card .title .role {
-  font-size: 12px;
-}
-
 /*  ====== FLIPPING CARDS ======= */
 
 .flipping-card-container {
@@ -192,7 +200,7 @@ section.team-members .card .title {
 
 }
 .card.two-sided:hover {
-  box-shadow: 0 0 1px rgba(0,0,0,0.1);
+  box-shadow: 0 0 1px rgba(0,0,0,0.7);
 }
 
 .card.two-sided > .content {
@@ -215,9 +223,6 @@ section.team-members .card .title {
 .card.two-sided.flippedToBack .front {visibility: hidden; opacity: 0;}
 
 .card.two-sided.flippedToFront {animation-name: showFrontFace }
-.card.two-sided.flippedToFront:hover {
-  margin-top: -2px;
-}
 .card.two-sided.flippedToFront .back {visibility: hidden; opacity: 0;}
 .card.two-sided.flippedToFront .front {visibility: visible; opacity: 1;}
 
@@ -265,7 +270,9 @@ section.team-members .card .title {
     min-width: 150px;
     margin: 20px 5px;
   }
-
+  section.team-members .card .title{
+      /*height: auto;   */
+  }
   section.rules .side-bar nav {
     position: static;
   }

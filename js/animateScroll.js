@@ -27,7 +27,6 @@ window.addEventListener('load', function() {
 				// the element in relation to the window. So we calculate 
 				//  the difference
 				var bodyMargin = window.getComputedStyle(document.body, null).getPropertyValue('margin-top');
-				console.log(bodyMargin);
 				var bodyOffset = document.body.getBoundingClientRect().top;
 				var targetOffset = scrollTarget.getBoundingClientRect().top;
 				var positionY =  targetOffset - bodyOffset;
@@ -37,6 +36,7 @@ window.addEventListener('load', function() {
 
 				// Just to update the address bar. 
 				window.location.hash = scrollTargetId;
+
 			}
 		});
 				
