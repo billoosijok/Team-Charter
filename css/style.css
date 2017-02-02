@@ -259,7 +259,7 @@ section.rules .side-bar nav {
   header.main .logo {
     width: 100px;
   }
-
+  
   section.team-members {
     overflow: auto;
   }
@@ -273,8 +273,14 @@ section.rules .side-bar nav {
   section.team-members .card .title{
       /*height: auto;   */
   }
+  
+  section.rules .content {
+    border-top: 2px solid #CE2F31;
+  }
+
   section.rules .side-bar nav {
     position: static;
+
   }
   section.rules .content, section.rules .side-bar {
     float: none;
@@ -298,8 +304,6 @@ section.rules .side-bar nav {
     float: none;
     margin: auto;
   }
-
-
 
   section.team-members .card {
     min-width: 130px;

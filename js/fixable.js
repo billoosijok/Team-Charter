@@ -16,7 +16,9 @@ function MakeFixable(el) {
   var lastYPos = 0;
 
 	window.addEventListener('scroll', function() {
-		if(elPosition.y - 20 <= pageYOffset) {
+
+    if(window.innerWidth > 600) {
+      if(elPosition.y - 20 <= pageYOffset) {
       if(pageYOffset > lastYPos) {
         el.style.position = 'fixed';
         // el.style.top = (pageYOffset - elContainerPosition.y) + "px";
@@ -28,6 +30,8 @@ function MakeFixable(el) {
       el.style.position = '';
     }
     lastYPos = pageYOffset;
+    }
+		
 	});
 
 }
