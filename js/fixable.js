@@ -16,8 +16,8 @@ function MakeFixable(el) {
   var lastYPos = 0;
 
 	window.addEventListener('scroll', function() {
-
-    if(window.innerWidth > 600) {
+    
+    if(Math.max(window.innerWidth, document.documentElement.clientWidth) > 600) {
       if(elPosition.y - 20 <= pageYOffset) {
       if(pageYOffset > lastYPos) {
         el.style.position = 'fixed';
