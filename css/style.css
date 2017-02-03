@@ -1,5 +1,9 @@
 /* ======= GENERAL LAYOUT ======= */
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Open Sans';
   margin: 0px;
@@ -115,6 +119,7 @@ section.team-members .card .front {
   background-size: cover;
 }
 
+
 #meredith {background-image: url('../img/Meredith.gif');}
 #joel {background-image: url('../img/Joel.gif');}
 #belal {background-image: url('../img/Belal.gif');}
@@ -130,9 +135,25 @@ section.team-members .card .title {
   transition: color 0.1s;
 }
 
- .card:hover  .title {
-  color: #CE2F31;
- }
+.card:hover  .title {
+color: #CE2F31;
+}
+
+section.team-members .card .back {
+  padding: 10px;
+}
+
+section.team-members .card .back h5 {
+  margin: 0 0 5px 0;
+  font-size: 17px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+section.team-members .card .back p{
+  margin: 0;
+  font-size: 15px;
+}
 
 .card .title span {
   display: block;
@@ -159,6 +180,14 @@ section.rules main ul {
   padding: 10px;
 }
 
+section.rules main ul.root > li {
+  border-bottom: 2px solid #CE2F31;
+}
+
+section.rules main ul.root > li:last-child {
+  border-bottom: none;
+}
+
 section.rules h3 {
   color: #254FA5;
   font-size: 20px;
@@ -178,7 +207,19 @@ section.rules .side-bar {
 
 section.rules .side-bar nav {
   position: relative;
-  top: 0;
+  top: 20px;
+  padding-left: 5px;
+  border-left: 2px solid transparent;
+  transition: border-left-color 0.4s;
+  transition: top 0.2s;
+}
+
+section.rules .side-bar nav.fixable {
+    transition: border-left-color 0.4s;
+    position: fixed;
+    border-left-color: #CE2F31;
+    top: 10px;
+
 }
 
 /*  ====== FLIPPING CARDS ======= */
@@ -189,18 +230,19 @@ section.rules .side-bar nav {
 
 .card.two-sided {
   cursor: pointer;
-  background-color: #aaa;
+  background-color: #fff;
   position: relative;
 
   animation-duration: 0.3s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
 
+  box-shadow: 0 0 10px rgba(0,0,0,1);
   transition: box-shadow 0.3s;
 
 }
 .card.two-sided:hover {
-  box-shadow: 0 0 1px rgba(0,0,0,0.7);
+  box-shadow: 0 0 3px rgba(0,0,0,0.4);
 }
 
 .card.two-sided > .content {
@@ -209,6 +251,7 @@ section.rules .side-bar nav {
   height: 100%;
   background-color: inherit;
   transition-duration: 0.3s;
+
 }
 .back {
   visibility: hidden;
@@ -222,29 +265,29 @@ section.rules .side-bar nav {
 .card.two-sided.flippedToBack .back {transition-delay: 0.2s;visibility: visible; opacity: 1;}
 .card.two-sided.flippedToBack .front {visibility: hidden; opacity: 0;}
 
-.card.two-sided.flippedToFront {animation-name: showFrontFace }
+.card.two-sided.flippedToFront {animation-name: showFrontFace;}
 .card.two-sided.flippedToFront .back {visibility: hidden; opacity: 0;}
 .card.two-sided.flippedToFront .front {visibility: visible; opacity: 1;}
 
 @keyframes showBackFace {
   from {
     transform: rotateY(0deg);
-    box-shadow: 0 5px 10px 0px rgba(0,0,0,0);
+    box-shadow: 0 0 2px 0px rgba(0,0,0,0.4);
   }
   to {
     transform: rotateY(180deg);
-    box-shadow: 0 5px 10px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 20px 0px rgba(0,0,0,0.2);
   }
 }
 
 @keyframes showFrontFace {
   from {
     transform: rotateY(180deg);
-    box-shadow: 0 5px 10px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 20px 0px rgba(0,0,0,0.2);
   }
   to {
     transform: rotateY(0deg);
-    box-shadow: 0 5px 10px 0px rgba(0,0,0,0);
+    box-shadow: 0 0 2px 0px rgba(0,0,0,0.4);
   }
 }
 
@@ -259,7 +302,7 @@ section.rules .side-bar nav {
   header.main .logo {
     width: 100px;
   }
-  
+
   section.team-members {
     overflow: auto;
   }
@@ -271,9 +314,10 @@ section.rules .side-bar nav {
     margin: 20px 5px;
   }
   section.team-members .card .title{
-      /*height: auto;   */
+      height: auto;  
+      font-size: 0.7em;
   }
-  
+
   section.rules .content {
     border-top: 2px solid #CE2F31;
   }
@@ -309,5 +353,8 @@ section.rules .side-bar nav {
     min-width: 130px;
     height: 150px;
     margin: 10px 0px;
+  }
+  section.team-members .card .front, section.team-members .card .back {
+    /*overflow-y: scroll;*/
   }
 }
