@@ -1,144 +1,360 @@
-body {
-  font-family: arial;
-  margin:0;
+/* ======= GENERAL LAYOUT ======= */
+
+* {
   box-sizing: border-box;
 }
-.container {
-  margin: 10px auto;
-  max-width : 700px;
-  background-color:#f2f2f2;
-  box-shadow: 0 0 4px rgba(0,0,0,0.5);
+
+body {
+  font-family: 'Open Sans';
+  margin: 0px;
+  padding: 0;
 }
-header {
-  padding: 30px;
+
+.la-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 20px;
 }
+
+header.main {
+  transition: height 0.3s;
+  background-image: url('../img/cover.jpg');
+  background-size: cover;
+  background-position: center center;
+  padding: 100px 0;
+
+  transition: padding 0.3s;
+}
+
 
 h1 {
-  font-size:35px;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-h2 {
-  font-size:25px;
-  margin: 5px 0;
-}
-
-.logo {
-  width: 150px;
+  margin: 60px 0 0 0;
   float: right;
+  font-size: 50px;
+  padding: 10px;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+
+  transition: font-size 0.3s;
+  transition: margin-top 0.3s;
+
 }
 
-.logo img {
-  height: 100%;
+header.main .logo {
+  float: left;
+  width: 200px;
+
+  transition: width 0.3s;
 }
 
-ul {
-  list-style: none;
-  padding:0;
-}
-header table {
-  border-spacing: 5px 13px;
-}
-
-header table th {
-  padding-bottom: 10px;
-  text-align: left;
-  font-style: italic;
-  color: #666;
-}
-header table tr td:first-child{
-  font-weight: bold;
-  /*border-left: 2px solid #777;*/
-  padding-left: 5px;
-}
-
-nav ul li {
-  border-bottom: 1px white solid;
-  background-color:#CE2F31;
-}
-
-nav ul li a {
+header.main .logo img {
+  width: 100%;
   display: block;
-  padding:15px;
-  transition: background-color 0.2s;
 }
 
-nav ul li a:hover {
-  background-color:#254FA5;
+header.main .la-container {
+  overflow: auto;
 }
 
-nav ul li a {
-  color:white;
+
+main.main > section {
+  padding: 20px 0 100px 0;
+}
+
+main.main > section h2 {
+  margin-bottom: 50px;
+}
+
+/* ====== NAV ====== */
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+nav li {
+  padding: 5px;
+}
+nav a {
   text-decoration: none;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  /*display: block;*/
+  padding: 5px 0;
+
+  transition: color 0.1s;
+}
+
+nav a:hover {
+  color: #CE2F31;
+}
+
+
+
+/* ===== TEAM MEMBERS' SECTION ====== */
+section.team-members {
+  border-bottom: 2px solid #CE2F31;
+  background-color: rgba(0,0,0,0.1);
+  /*height: 300px;*/
+
+}
+
+section.team-members .flex-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+section.team-members .flex-cards > * {
+  display: block;
+}
+
+section.team-members .card {
+  max-width: 230px;
+  width: 22%;
+  height: 250px;
+  overflow: hidden;
+  transition: margin 0.1s, width 0.3s;
+}
+section.team-members .card .front {
+  background-position: center center;
+  background-size: cover;
+}
+
+
+#meredith {background-image: url('../img/Meredith.gif');}
+#joel {background-image: url('../img/Joel.gif');}
+#belal {background-image: url('../img/Belal.gif');}
+#steven {background-image: url('../img/Steven.gif');}
+
+section.team-members .card .title {
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(255,255,255, .95);
+  transition: color 0.1s;
+}
+
+.card:hover  .title {
+color: #CE2F31;
+}
+
+section.team-members .card .back {
+  padding: 10px;
+}
+
+section.team-members .card .back h5 {
+  margin: 0 0 5px 0;
+  font-size: 17px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+section.team-members .card .back p{
+  margin: 0;
+  font-size: 15px;
+}
+
+.card .title span {
+  display: block;
   text-transform: uppercase;
 }
-
-ol {
-  padding: 0 0 0 40px;
-  list-style-type: none;
-  counter-reset: list;
+.card .title .name {
+  font-weight: bold;
 }
 
-ol li {
-  padding: 20px;
-  position: relative;
+.card .title .role {
+  font-size: 12px;
+}
+
+/* ===== RULES SECTION ===== */
+section.rules {
+  overflow: auto;
+}
+.roles {
+  list-style:disc;
+  margin:10px;
+}
+section.rules main ul {
+  list-style: none;
+  padding: 10px;
+}
+
+section.rules main ul.root > li {
   border-bottom: 2px solid #CE2F31;
 }
 
-ol li:last-child {
+section.rules main ul.root > li:last-child {
   border-bottom: none;
 }
 
-ol li:before {
-  counter-increment: list;
-  content: counter(list);
-  position: absolute;
+section.rules h3 {
+  color: #254FA5;
+  font-size: 20px;
+}
+
+section.rules .content {
+  width: 76%;
+  margin-right: 2%;
   float: left;
-  left: -20px;
-  top: 30px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #666;
 }
 
-ol li h3 {
-  display: inline-block;
-  margin: 0;
-}
-
-footer {
-  background-color:#CE2F31;
-  padding:20px;
-  margin:0;
-}
-
-footer a {
-  display: block;
-  text-align: center;
-  height: 40px;
-  margin: auto;
+section.rules .side-bar {
+  width: 22%;
+  float: right;
   position: relative;
-  transition: background-color 0.2s;
-  background-image: url('../img/arrow.svg');
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
-footer a img {
+section.rules .side-bar nav {
+  position: relative;
+  top: 20px;
+  padding-left: 5px;
+  border-left: 2px solid transparent;
+  transition: border-left-color 0.4s;
+  transition: top 0.2s;
+}
+
+section.rules .side-bar nav.fixable {
+    transition: border-left-color 0.4s;
+    position: fixed;
+    border-left-color: #CE2F31;
+    top: 10px;
+
+}
+
+/*  ====== FLIPPING CARDS ======= */
+
+.flipping-card-container {
+  perspective: 1000px;
+}
+
+.card.two-sided {
+  cursor: pointer;
+  background-color: #fff;
+  position: relative;
+
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+
+  box-shadow: 0 0 10px rgba(0,0,0,1);
+  transition: box-shadow 0.3s;
+
+}
+.card.two-sided:hover {
+  box-shadow: 0 0 3px rgba(0,0,0,0.4);
+}
+
+.card.two-sided > .content {
+  position: absolute;
+  width: 100%;
   height: 100%;
-  transform: rotate(180deg);
+  background-color: inherit;
+  transition-duration: 0.3s;
+
+}
+.back {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(-1,1);
+}
+
+.card.two-sided.flippedToBack {
+  animation-name: showBackFace;
+}
+.card.two-sided.flippedToBack .back {transition-delay: 0.2s;visibility: visible; opacity: 1;}
+.card.two-sided.flippedToBack .front {visibility: hidden; opacity: 0;}
+
+.card.two-sided.flippedToFront {animation-name: showFrontFace;}
+.card.two-sided.flippedToFront .back {visibility: hidden; opacity: 0;}
+.card.two-sided.flippedToFront .front {visibility: visible; opacity: 1;}
+
+@keyframes showBackFace {
+  from {
+    transform: rotateY(0deg);
+    box-shadow: 0 0 2px 0px rgba(0,0,0,0.4);
+  }
+  to {
+    transform: rotateY(180deg);
+    box-shadow: 0 5px 20px 0px rgba(0,0,0,0.2);
+  }
+}
+
+@keyframes showFrontFace {
+  from {
+    transform: rotateY(180deg);
+    box-shadow: 0 5px 20px 0px rgba(0,0,0,0.2);
+  }
+  to {
+    transform: rotateY(0deg);
+    box-shadow: 0 0 2px 0px rgba(0,0,0,0.4);
+  }
+}
+
+@media (max-width: 600px) {
+  header.main {
+    padding: 70px 0;
+  }
+  h1 {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+  header.main .logo {
+    width: 100px;
+  }
+
+  section.team-members {
+    overflow: auto;
+  }
+
+  section.team-members .card {
+    width: 35%;
+    height: 250px;
+    min-width: 150px;
+    margin: 20px 5px;
+  }
+  section.team-members .card .title{
+      height: auto;  
+      font-size: 0.7em;
+  }
+
+  section.rules .content {
+    border-top: 2px solid #CE2F31;
+  }
+
+  section.rules .side-bar nav {
+    position: static;
+
+  }
+  section.rules .content, section.rules .side-bar {
+    float: none;
+    width: auto;
+  }
 
 }
 
-footer a:hover {
-  background-color: rgba(0,0,0,0.1);
-}
+@media (max-width: 400px) {
+  header.main {
+    padding: 50px 0;
+  }
 
-@media (max-width: 480px) {
-  header .logo {
+  header.main h1 {
+    float: none;
+    /*margin: auto;*/
+    text-align: center;
+  }
+
+  header.main .logo {
     float: none;
     margin: auto;
+  }
+
+  section.team-members .card {
+    min-width: 130px;
+    height: 150px;
+    margin: 10px 0px;
+  }
+  section.team-members .card .front, section.team-members .card .back {
+    /*overflow-y: scroll;*/
   }
 }
